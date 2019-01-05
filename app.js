@@ -1,7 +1,8 @@
 let shape = ['oval', 'diamond', 'squiggle']
-let color = ['red', 'green', 'blue']
+let color = ['red', 'green', 'purple']
 let number = [1, 2, 3]
 let shade = ['blank', 'solid', 'stripe']
+
 
 let cards = []
 
@@ -13,7 +14,9 @@ for (let i = 0; i < shape.length; i++) {
                     shape: shape[i],
                     color: color[j],
                     number: number[x],
-                    shade: shade[y]
+                    shade: shade[y],
+                    image: `${color[j].slice(0,2)}${shape[i].slice(0,2)}n${number[x]}${shade[j].slice(0,2)}.png`
+
                 })
             }
         }
@@ -194,7 +197,7 @@ search.addEventListener('keypress', (e) => {
     if (e.keyCode === 13) {
         let test = results.innerHTML
         test += 'hello'
-        results.innerHTML = searchCard(e.target.value).reduce((acc,e)=>acc+=`<li>${e.shape} ${e.color} ${e.number} ${e.shade}</li> <button>add</button>`,'')
+        results.innerHTML = searchCard(e.target.value).reduce((acc,e)=>acc+=`<li>${e.shape} ${e.color} ${e.number} ${e.shade} <button>add</button> <img style="width=30px;height:60px;"src="./images/${e.image}"></li>`,'')
 
         //console.log(searchCard(e.target.value).reduce((acc,e)=>acc+=`<li>${e.shape} ${e.color} ${e.number} ${e.shade}</li> <button>add</button>`),'')
     }

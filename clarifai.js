@@ -5,16 +5,16 @@ const app = new Clarifai.App({
     apiKey: 'b17a9673d35f4f3ab4085e3213658e06'
    });
 
-  //  fs.readFile('./diamong.png',(err,data)=>{
+  // //  fs.readFile('./diamong.png',(err,data)=>{
     
-    app.models.predict(Clarifai.GENERAL_MODEL, 'https://www.catster.com/wp-content/uploads/2018/05/A-gray-cat-crying-looking-upset.jpg')
-    .then(response => {
-      console.log(response.outputs[0].data);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  //  })
+  //   app.models.predict(Clarifai.GENERAL_MODEL, 'https://www.catster.com/wp-content/uploads/2018/05/A-gray-cat-crying-looking-upset.jpg')
+  //   .then(response => {
+  //     console.log(response.outputs[0].data);
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
+  // //  })
   
 
 
